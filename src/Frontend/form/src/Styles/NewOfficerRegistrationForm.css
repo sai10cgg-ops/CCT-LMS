@@ -1,0 +1,173 @@
+.registration-page {
+  background: #f5f7fb;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start; /* ensure content starts at top */
+  padding: 0; /* remove outer padding so content can be full-bleed */
+  overflow-x: hidden;
+  width: 100%;
+} 
+
+.registration-page .container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+} 
+
+.form-container {
+  width: 100%; /* use % instead of 100vw to avoid scrollbar clipping */
+  max-width: 100%;
+  padding: 48px 32px;
+  background: #ffffff;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0 auto;
+  box-sizing: border-box;
+  min-height: calc(100vh - 48px); /* occupy full viewport height minus header padding */
+  overflow-x: hidden; /* prevent horizontal overflow */
+}  
+
+.page-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.section-card {
+  background: #ffffff;
+  border: 1px solid #e9eef6;
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.section-title {
+  font-weight: 700;
+  color: #2c3e50;
+  text-align: left;
+}
+
+.form-container form {
+  height: 100%;
+}
+
+.form-container .row {
+  margin-left: 0 !important; /* remove bootstrap negative gutters */
+  margin-right: 0 !important;
+}
+
+.form-container .row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+  padding-left: 12px; /* small inner gutter */
+  padding-right: 12px;
+  box-sizing: border-box;
+  min-width: 0; /* allow columns to shrink inside flex container */
+}
+
+/* Ensure form controls don't overflow their columns */
+.form-container input,
+.form-container select,
+.form-container textarea,
+.form-container .input-group {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Make the row inside registration page stretch rather than center */
+.registration-page .row.justify-content-center {
+  justify-content: flex-start !important;
+  margin: 0;
+}
+
+/* Make sure col-12 fills the width inside registration page */
+.registration-page .col-12 {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+}
+
+/* Small styles for the address checkbox */
+.small-check .small-label {
+  font-size: 0.85rem;
+}
+.small-check .small-input {
+  transform: scale(0.95);
+  margin-right: 0.4rem;
+}
+
+/* File drop + preview */
+.file-drop-zone {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.preview-box {
+  width: 120px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: #fbfdff;
+  border: 1px solid #f0f2f5;
+}
+
+.preview-img {
+  width: 110px;
+  height: 130px;
+  object-fit: cover;
+}
+
+
+.form-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.input-group .input-group-text {
+  background: #f0f2f5;
+  border: 1px solid #e3e6ea;
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-group-text i,
+.input-group-text svg {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+.form-container .form-control:focus,
+.form-container .form-select:focus {
+  box-shadow: 0 0 0 0.08rem rgba(24, 144, 255, 0.15);
+  border-color: #1890ff;
+}
+
+.btn-success {
+  background: linear-gradient(90deg,#0f9d58,#2fbf71);
+  border: none;
+}
+
+@media (max-width: 767px) {
+  .form-container {
+    padding: 16px !important;
+    min-height: auto;
+  }
+}
+
+.file-drop-zone {
+  background: #fbfdff;
+  border: 1px dashed #d9e2ef;
+  cursor: pointer;
+}
+
+.file-drop-zone:hover {
+  background: #f1f7ff;
+}
