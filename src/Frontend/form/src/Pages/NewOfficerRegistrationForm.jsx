@@ -181,7 +181,7 @@ const handleSubmit = async (e) => {
     const result = await response.json();
     console.log("Saved:", result);
 
-    // alert("Registration submitted successfully");
+    
     toast.success("Registration submitted successfully");
 
   } catch (error) {
