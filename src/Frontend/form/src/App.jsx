@@ -5,17 +5,19 @@ import NewOfficerRegistrationForm from './Pages/NewOfficerRegistrationForm.jsx'
 import Login from './Pages/Login.jsx'
 import Dashboard from './Pages/dashboard.jsx'
 import Admin from './Pages/admin.jsx'
+import ProtectedRoute from './ProtectedRoute.jsx'
+import PublicRoute from './PublicRoute.jsx'
 
 
 
 const App = () => {
   return (
     <Routes>
-      <Route path='/' element={<Login />} />
-      <Route path='/registerofficer' element={<NewOfficerRegistrationForm />} />
-      <Route path='/applyleave' element={<ApplyLeave />} />
-      <Route path='/dashboard' element={<Dashboard />} />
-      <Route path='/admin' element={<Admin />} />
+      <Route path='/' element={<PublicRoute><Login /></PublicRoute>} />
+      <Route path='/registerofficer' element={<ProtectedRoute><NewOfficerRegistrationForm /></ProtectedRoute>} />
+      <Route path='/applyleave' element={<ProtectedRoute><ApplyLeave /></ProtectedRoute>} />
+      <Route path='/dashboard' element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+      <Route path='/admin' element={<ProtectedRoute><Admin /></ProtectedRoute>} />
     </Routes>
   )
 }

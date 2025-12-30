@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 
 const Login = () => {
 
   const navigate = useNavigate();
-  
+
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -39,8 +40,11 @@ const Login = () => {
       const data = await response.json();
 
       // Save JWT token & role
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("role", data.role);
+      // localStorage.setItem("token", data.token);
+      // localStorage.setItem("role", data.role);
+      Cookies.set("token", data.token, { expires: 1 }); // 1 day
+      Cookies.set("role", data.role, { expires: 1 });
+    
 
       toast.success("Login successful!");
 
